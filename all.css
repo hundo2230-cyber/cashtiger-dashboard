@@ -1,0 +1,80 @@
+/* 합친 계기판 메인 — 타일 다섯 장. 색 토큰은 카드 넷(macro.css·rates.css·b9.css·vix.css)과
+   **같은 판**이다. ⚠️토큰이 갈리면 메인과 상세가 다른 색으로 보인다 ⇒
+   `tests/test_unified_dashboard.py` 가 네 벌이 같은지 기계로 잰다. */
+:root{
+  --surface:#fcfcfb;
+  --panel:#f2f3f1;
+  --panel-2:#e7e9e6;
+  --line:#d4d7d2;
+  --ink:#0b0b0b;
+  --ink-2:#52514e;
+  --ink-3:#7d7c76;
+  --accent:#17556b;
+  --warning:#b07c00;
+  --serious:#cf5e30;
+  --track:#dcdfda;
+  --font-ui:"Archivo","Noto Sans KR",system-ui,-apple-system,sans-serif;
+  --font-num:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+    --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+    --accent:#5fb0cc; --track:#3a3a37;
+    --warning:#d8a300; --serious:#e07a4a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+  --accent:#5fb0cc; --track:#3a3a37;
+  --warning:#d8a300; --serious:#e07a4a;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--surface); color:var(--ink); margin:0;
+  font-family:var(--font-ui); font-size:15px; line-height:1.6}
+.num{font-family:var(--font-num); font-variant-numeric:tabular-nums}
+.wrap{max-width:760px; margin:0 auto; padding:0 16px 56px}
+
+.top{border-bottom:1px solid var(--line); background:var(--panel)}
+.top-in{max-width:760px; margin:0 auto; padding:14px 16px;
+  display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline}
+.top h1{font-size:19px; margin:0; letter-spacing:-.01em}
+.asof{font-size:12.5px; color:var(--ink-2)}
+.snapshot{font-size:12.5px; color:var(--ink-3)}
+
+.lede{color:var(--ink-2); margin:22px 0 18px; font-size:15px}
+
+/* ⭐타일은 **값 단위**다 — 카드 단위로 묶으면 셋 중 하나만 빠른 쪽인 것이 안 보인다. */
+.tiles{display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(222px,1fr))}
+.tile{display:block; text-decoration:none; color:inherit;
+  background:var(--panel); border:1px solid var(--line); border-radius:10px;
+  padding:14px 15px 13px; border-left:3px solid var(--track)}
+.tile:hover{background:var(--panel-2)}
+.tile:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.t-name{font-size:13px; color:var(--ink-2); margin:0 0 6px}
+.t-value{display:block; font-size:25px; font-weight:600; letter-spacing:-.02em; line-height:1.15}
+.t-verdict{display:block; margin-top:7px; font-size:13.5px; font-weight:500}
+.t-note{display:block; margin-top:3px; font-size:12.5px; color:var(--ink-3)}
+.t-at{display:block; margin-top:8px; font-size:11.5px; color:var(--ink-3)}
+.t-go{font-size:12px; color:var(--accent)}
+
+/* ⛔한 타일에 색은 하나다 — 왼쪽 띠에만 쓴다. 평온한 단계에도 **항상 켠다**
+   ("위험할 때만 켠다"로 만들었더니 7일 중 6일이 무색이었다 · VIX 카드 실측). */
+.tile.b-calm,.tile.b-quiet{border-left-color:var(--accent)}
+.tile.b-brisk,.tile.b-choppy{border-left-color:var(--warning)}
+.tile.b-fast,.tile.b-stormy{border-left-color:var(--serious)}
+.tile.b-b9-cool_neutral,.tile.b-b9-cool_tight{border-left-color:var(--accent)}
+.tile.b-b9-hot_neutral{border-left-color:var(--warning)}
+.tile.b-b9-hot_tight,.tile.b-b9-hot_slack,.tile.b-b9-cool_slack{border-left-color:var(--serious)}
+
+.read{margin-top:30px; border-top:1px solid var(--line); padding-top:18px}
+.read h2{font-size:15.5px; margin:0 0 8px}
+.read p{color:var(--ink-2); margin:0 0 9px}
+
+.foot{margin-top:28px; border-top:1px solid var(--line); padding-top:14px}
+.foot p{font-size:12px; color:var(--ink-3); margin:0 0 6px}

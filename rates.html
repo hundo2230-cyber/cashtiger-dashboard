@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CashTiger 금리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="rates.css">
+
+<header class="top">
+  <div class="top-in">
+    <a href="index.html" style="color:var(--accent);text-decoration:none;font-size:12.5px">← 계기판</a>
+    <h1>미국 금리</h1>
+    <span class="asof num" id="asof"></span>
+    <span class="snapshot">스냅샷 · 자동 갱신 없음</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="lede" id="lede"></p>
+
+  <div class="cards" id="cards"></div>
+
+  <section class="read">
+    <h2 id="readTitle"></h2>
+    <p id="read1"></p>
+    <p id="read2"></p>
+    <p id="read3"></p>
+  </section>
+
+  <footer class="foot">
+    <p id="foot1"></p>
+    <p id="foot2"></p>
+  </footer>
+
+</div>
+
+<script src="rates-data.js"></script>
+<script src="rates-view.js"></script>

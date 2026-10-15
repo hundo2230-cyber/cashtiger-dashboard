@@ -1,0 +1,97 @@
+/* 물가×고용 격자 — 색 토큰은 거시 계기판·금리 카드와 같은 판을 쓴다. */
+:root{
+  --surface:#fcfcfb; --panel:#f2f3f1; --panel-2:#e7e9e6; --line:#d4d7d2;
+  --ink:#0b0b0b; --ink-2:#52514e; --ink-3:#7d7c76;
+  --accent:#17556b; --warning:#b07c00; --track:#dcdfda;
+  --font-ui:"Archivo","Noto Sans KR",system-ui,-apple-system,sans-serif;
+  --font-num:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+    --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+    --accent:#5fb0cc; --warning:#d8a300; --track:#3a3a37;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+  --accent:#5fb0cc; --warning:#d8a300; --track:#3a3a37;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--surface); color:var(--ink); margin:0;
+  font-family:var(--font-ui); font-size:15px; line-height:1.6}
+.num{font-family:var(--font-num); font-variant-numeric:tabular-nums}
+.wrap{max-width:780px; margin:0 auto; padding:0 16px 56px}
+
+.top{border-bottom:1px solid var(--line); background:var(--panel)}
+.top-in{max-width:780px; margin:0 auto; padding:14px 16px;
+  display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline}
+.top h1{font-size:19px; margin:0; letter-spacing:-.01em}
+.asof{font-size:12.5px; color:var(--ink-2)}
+.snapshot{font-size:11.5px; color:var(--ink-3); border:1px solid var(--line);
+  border-radius:999px; padding:1px 8px}
+
+.lede{color:var(--ink-2); font-size:14.5px; margin:22px 0 0; max-width:62ch}
+section{margin-top:28px}
+h2{font-size:15.5px; margin:0 0 8px}
+.sub{margin:0 0 12px; font-size:13.5px; color:var(--ink-2); max-width:64ch}
+
+/* 지금 상자 */
+.now-box{border:1px solid var(--line); border-left:4px solid var(--warning);
+  border-radius:12px; background:var(--panel); padding:15px 16px}
+.now-head{display:flex; flex-wrap:wrap; gap:6px 12px; align-items:baseline; margin:0}
+.now-head strong{font-size:21px; letter-spacing:-.01em}
+.now-run{font-size:12.5px; color:var(--warning); border:1px solid var(--warning);
+  border-radius:999px; padding:1px 9px}
+.now-why{margin:4px 0 0; color:var(--ink-2); font-size:13.5px}
+.now-nums{list-style:none; margin:14px 0 0; padding:0; display:flex;
+  flex-direction:column; gap:8px}
+.now-nums li{display:flex; flex-wrap:wrap; gap:2px 10px; align-items:baseline}
+.now-nums .k{min-width:5ch; font-size:13px; color:var(--ink-3)}
+.now-nums .v{font-weight:700; font-size:15.5px}
+.now-nums .m{font-size:12.5px; color:var(--ink-2)}
+.now-band{margin:14px 0 0; font-size:13px; color:var(--ink-2);
+  background:var(--panel-2); border-radius:8px; padding:10px 12px}
+
+/* 2×3 격자 — 가운데 열이 중립 띠 */
+.grid{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+.cell{border:1px solid var(--line); border-radius:10px; background:var(--panel);
+  padding:11px 12px; min-height:92px; display:flex; flex-direction:column; gap:3px}
+.cell strong{font-size:14.5px}
+.cell-why{font-size:12px; color:var(--ink-3); line-height:1.45}
+.cell.mid{background:var(--panel-2); border-style:dashed}
+.cell.on{border-color:var(--warning); border-width:2px; background:var(--panel)}
+.cell.on strong{color:var(--warning)}
+.cell-here{margin-top:auto; font-size:11.5px; color:var(--warning); font-weight:700}
+.axis{margin:9px 0 0; font-size:11.5px; color:var(--ink-3); text-align:center}
+
+/* 역사 비중 */
+.hist{display:flex; flex-direction:column; gap:9px}
+.row{display:grid; grid-template-columns:9ch 1fr auto; gap:4px 10px;
+  align-items:center}
+.row.on .r-name{color:var(--warning); font-weight:700}
+.r-name{font-size:13px}
+.r-bar{height:8px; border-radius:999px; background:var(--track); overflow:hidden}
+.r-bar span{display:block; height:100%; background:var(--ink-3); border-radius:999px}
+.row.on .r-bar span{background:var(--warning)}
+.r-num{font-size:12px; color:var(--ink-2); white-space:nowrap}
+.r-run{grid-column:2 / -1; font-size:11.5px; color:var(--ink-3)}
+
+.read{border-top:1px solid var(--line); padding-top:18px}
+.read p{margin:0 0 9px; font-size:13.5px; color:var(--ink-2); max-width:66ch}
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--line)}
+.foot p{margin:0 0 6px; font-size:11.5px; color:var(--ink-3); max-width:70ch}
+
+@media (max-width:620px){
+  .grid{grid-template-columns:1fr}
+  .cell{min-height:0}
+  .cell.mid{border-style:solid}
+  .row{grid-template-columns:1fr auto}
+  .r-bar{grid-column:1 / -1}
+  .r-run{grid-column:1 / -1}
+}

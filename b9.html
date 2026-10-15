@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>물가와 고용</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="b9.css">
+
+<header class="top">
+  <div class="top-in">
+    <a href="index.html" style="color:var(--accent);text-decoration:none;font-size:12.5px">← 계기판</a>
+    <h1>물가와 고용</h1>
+    <span class="asof num" id="asof"></span>
+    <span class="snapshot">스냅샷 · 자동 갱신 없음</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="lede" id="lede"></p>
+
+  <section class="now">
+    <h2 id="nowTitle"></h2>
+    <div class="now-box" id="nowBox"></div>
+  </section>
+
+  <section>
+    <h2 id="gridTitle"></h2>
+    <p class="sub" id="gridNote"></p>
+    <div class="grid" id="grid"></div>
+    <p class="axis" id="axisNote"></p>
+  </section>
+
+  <section>
+    <h2 id="histTitle"></h2>
+    <p class="sub" id="histNote"></p>
+    <div class="hist" id="hist"></div>
+  </section>
+
+  <section class="read">
+    <h2 id="readTitle"></h2>
+    <p id="read1"></p>
+    <p id="read2"></p>
+    <p id="read3"></p>
+  </section>
+
+  <footer class="foot">
+    <p id="foot1"></p>
+    <p id="foot2"></p>
+    <p id="foot3"></p>
+  </footer>
+
+</div>
+
+<script src="b9-data.js"></script>
+<script src="b9-view.js"></script>

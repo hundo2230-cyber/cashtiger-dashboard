@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CashTiger 계기판</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+
+<link rel="stylesheet" href="all.css">
+
+<header class="top">
+  <div class="top-in">
+    <h1>미국 경제 계기판</h1>
+    <span class="asof num" id="asof"></span>
+    <!-- ⛔신선도는 글로 박지 않는다 — 발행본은 스냅샷이고 로컬판은 매일 갱신된다.
+         파생물(all-data.js)의 FRESH 가 들고 온다. -->
+    <span class="snapshot" id="fresh"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <p class="lede" id="lede"></p>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section class="read">
+    <h2 id="readTitle"></h2>
+    <p id="read1"></p>
+    <p id="read2"></p>
+    <p id="read3"></p>
+  </section>
+
+  <footer class="foot">
+    <p id="foot1"></p>
+    <p id="foot2"></p>
+  </footer>
+
+</div>
+
+<script src="all-data.js"></script>
+<script src="all-view.js"></script>

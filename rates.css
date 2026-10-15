@@ -1,0 +1,111 @@
+/* 금리 카드 — 한 열. 색 토큰은 거시 계기판(macro.css)과 같은 판을 쓴다. */
+:root{
+  --surface:#fcfcfb;
+  --panel:#f2f3f1;
+  --panel-2:#e7e9e6;
+  --line:#d4d7d2;
+  --ink:#0b0b0b;
+  --ink-2:#52514e;
+  --ink-3:#7d7c76;
+  --accent:#17556b;
+  --warning:#b07c00;
+  --serious:#cf5e30;
+  --track:#dcdfda;
+  --font-ui:"Archivo","Noto Sans KR",system-ui,-apple-system,sans-serif;
+  --font-num:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+    --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+    --accent:#5fb0cc; --track:#3a3a37;
+    --warning:#d8a300; --serious:#e07a4a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --surface:#1a1a19; --panel:#232322; --panel-2:#2c2c2a; --line:#3a3a37;
+  --ink:#ffffff; --ink-2:#c3c2b7; --ink-3:#8f8e85;
+  --accent:#5fb0cc; --track:#3a3a37;
+  --warning:#d8a300; --serious:#e07a4a;
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+body{background:var(--surface); color:var(--ink); margin:0;
+  font-family:var(--font-ui); font-size:15px; line-height:1.6}
+.num{font-family:var(--font-num); font-variant-numeric:tabular-nums}
+.wrap{max-width:760px; margin:0 auto; padding:0 16px 56px}
+
+.top{border-bottom:1px solid var(--line); background:var(--panel)}
+.top-in{max-width:760px; margin:0 auto; padding:14px 16px;
+  display:flex; flex-wrap:wrap; gap:6px 14px; align-items:baseline}
+.top h1{font-size:19px; margin:0; letter-spacing:-.01em}
+.asof{font-size:12.5px; color:var(--ink-2)}
+.snapshot{font-size:11.5px; color:var(--ink-3); border:1px solid var(--line);
+  border-radius:999px; padding:1px 8px}
+
+.lede{color:var(--ink-2); font-size:14.5px; margin:22px 0 4px}
+.cards{display:flex; flex-direction:column; gap:18px; margin:18px 0 28px}
+
+.c{border:1px solid var(--line); border-radius:12px; background:var(--panel);
+  padding:16px 16px 14px; border-left-width:4px; border-left-color:var(--line)}
+.c-brisk{border-left-color:var(--warning)}
+.c-fast{border-left-color:var(--serious)}
+
+.c-h{display:flex; flex-wrap:wrap; gap:10px 16px; align-items:flex-start;
+  justify-content:space-between}
+.c-h h3{margin:0; font-size:16.5px}
+.c-blurb{margin:2px 0 0; color:var(--ink-2); font-size:13.5px; max-width:36ch}
+.c-now{text-align:right; flex:0 0 auto}
+.c-now strong{display:block; font-size:30px; line-height:1.1; letter-spacing:-.02em}
+.c-now .pc{font-size:17px; color:var(--ink-2); margin-left:1px}
+.c-at{font-size:11.5px; color:var(--ink-3)}
+
+.c-move{margin-top:16px; padding-top:14px; border-top:1px solid var(--line)}
+.c-move-h{display:flex; flex-wrap:wrap; gap:6px 12px; align-items:center;
+  justify-content:space-between; margin:0 0 9px}
+.c-move-h strong{font-size:16px}
+.tag{font-size:12px; border-radius:999px; padding:2px 10px;
+  border:1px solid var(--line); color:var(--ink-2); background:var(--panel-2)}
+.c-brisk .tag{border-color:var(--warning); color:var(--warning)}
+.c-fast .tag{border-color:var(--serious); color:var(--serious)}
+
+.bar{position:relative; height:10px; border-radius:999px; background:var(--track);
+  overflow:hidden}
+.bar-fill{position:absolute; inset:0 auto 0 0; background:var(--ink-3); border-radius:999px}
+.c-brisk .bar-fill{background:var(--warning)}
+.c-fast .bar-fill{background:var(--serious)}
+.bar-cut{position:absolute; top:-2px; bottom:-2px; width:2px; background:var(--ink);
+  opacity:.38}
+.bar-cut-2{opacity:.62}
+
+.c-scale{margin:7px 0 0; font-size:11.5px; color:var(--ink-3)}
+.c-why{margin:7px 0 0; font-size:13.5px; color:var(--ink-2)}
+
+.c-level{margin-top:15px; padding-top:13px; border-top:1px solid var(--line)}
+.c-level-h{margin:0 0 8px; font-size:13px; color:var(--ink-3)}
+.c-level ul{list-style:none; margin:0; padding:0; display:flex;
+  flex-direction:column; gap:6px}
+.c-level li{display:flex; flex-wrap:wrap; gap:3px 10px; align-items:baseline}
+.c-level .w{min-width:11ch; font-size:13px; color:var(--ink-2)}
+.c-level .v{font-weight:700; font-size:14.5px}
+.c-level .m{font-size:11.5px; color:var(--ink-3)}
+.c-nojudge{margin:11px 0 0; font-size:13px; color:var(--ink-2);
+  background:var(--panel-2); border-radius:8px; padding:9px 11px}
+
+.c-src{margin:13px 0 0; padding-top:11px; border-top:1px solid var(--line);
+  font-size:11.5px; color:var(--ink-3)}
+
+.read{border-top:1px solid var(--line); padding-top:18px}
+.read h2{font-size:15px; margin:0 0 8px}
+.read p{margin:0 0 9px; font-size:13.5px; color:var(--ink-2)}
+.foot{margin-top:26px; padding-top:14px; border-top:1px solid var(--line)}
+.foot p{margin:0 0 6px; font-size:11.5px; color:var(--ink-3)}
+
+@media (max-width:560px){
+  .c-h{flex-direction:column}
+  .c-now{text-align:left}
+  .c-level .w{min-width:0}
+}
