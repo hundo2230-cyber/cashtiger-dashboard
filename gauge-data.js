@@ -2,7 +2,7 @@
    원천 = synexus/data/macro.db (FRED 수집본). 숫자를 손으로 적으면 조용히 낡는다.
    ⭐바늘 위치(pos)도 여기서 계산한다 — 화면이 위치를 발명하지 못하게. */
 const GAUGE = {
- "asOf": "2026-10-19",
+ "asOf": "2026-10-20",
  "gauges": [
   {
    "key": "spread",
@@ -12,14 +12,14 @@ const GAUGE = {
    "compare": "0 과 비교합니다. 0 아래로 내려가면 '역전' 이라 부릅니다.",
    "source": "FRED T10Y2Y",
    "marksAbsentReason": "",
-   "value": 0.38,
-   "asOf": "2026-10-19",
-   "pct": 33.1,
+   "value": 0.33,
+   "asOf": "2026-10-20",
+   "pct": 31.3,
    "axisLo": -0.89,
    "axisHi": 2.64,
-   "pos": 0.3598,
+   "pos": 0.3456,
    "clamped": false,
-   "sampleN": 12592,
+   "sampleN": 12593,
    "sampleFrom": "1976-06-01",
    "marks": [
     {
@@ -131,13 +131,13 @@ const GAUGE = {
    "source": "FRED T10YIE",
    "marksAbsentReason": "공표된 2% 물가 목표는 '개인소비지출 물가지수' 기준이고, 이 값은 소비자물가지수에 연동된 채권에서 나옵니다. 기준이 달라 선을 긋지 않았습니다.",
    "value": 2.35,
-   "asOf": "2026-10-19",
-   "pct": 71.2,
+   "asOf": "2026-10-20",
+   "pct": 71.1,
    "axisLo": 1.08,
    "axisHi": 2.66,
    "pos": 0.8038,
    "clamped": false,
-   "sampleN": 5953,
+   "sampleN": 5954,
    "sampleFrom": "2003-01-02",
    "marks": []
   }
