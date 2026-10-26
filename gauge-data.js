@@ -2,7 +2,7 @@
    원천 = synexus/data/macro.db (FRED 수집본). 숫자를 손으로 적으면 조용히 낡는다.
    ⭐바늘 위치(pos)도 여기서 계산한다 — 화면이 위치를 발명하지 못하게. */
 const GAUGE = {
- "asOf": "2026-10-23",
+ "asOf": "2026-10-26",
  "gauges": [
   {
    "key": "spread",
@@ -12,14 +12,14 @@ const GAUGE = {
    "compare": "0 과 비교합니다. 0 아래로 내려가면 '역전' 이라 부릅니다.",
    "source": "FRED T10Y2Y",
    "marksAbsentReason": "",
-   "value": 0.31,
-   "asOf": "2026-10-23",
-   "pct": 30.6,
+   "value": 0.32,
+   "asOf": "2026-10-26",
+   "pct": 30.9,
    "axisLo": -0.89,
    "axisHi": 2.64,
-   "pos": 0.3399,
+   "pos": 0.3428,
    "clamped": false,
-   "sampleN": 12596,
+   "sampleN": 12597,
    "sampleFrom": "1976-06-01",
    "marks": [
     {
@@ -37,14 +37,14 @@ const GAUGE = {
    "compare": "자기 과거 기록과 비교합니다. 값이 클수록 경기가 센 편입니다.",
    "source": "FRED CFNAI (시카고 연준)",
    "marksAbsentReason": "공표된 경기순환 기준(-0.70 / +0.20)은 3개월 이동평균값에 대한 것이고, 이 계기는 달마다의 값을 그립니다. 기준이 다른 값에 선을 그으면 틀린 선이 됩니다.",
-   "value": -0.04,
-   "asOf": "2026-08-01",
-   "pct": 40.6,
+   "value": 0.07,
+   "asOf": "2026-09-01",
+   "pct": 53.0,
    "axisLo": -1.82,
    "axisHi": 1.3,
-   "pos": 0.5705,
+   "pos": 0.6058,
    "clamped": false,
-   "sampleN": 714,
+   "sampleN": 715,
    "sampleFrom": "1967-03-01",
    "marks": []
   },
@@ -131,13 +131,13 @@ const GAUGE = {
    "source": "FRED T10YIE",
    "marksAbsentReason": "공표된 2% 물가 목표는 '개인소비지출 물가지수' 기준이고, 이 값은 소비자물가지수에 연동된 채권에서 나옵니다. 기준이 달라 선을 긋지 않았습니다.",
    "value": 2.34,
-   "asOf": "2026-10-23",
+   "asOf": "2026-10-26",
    "pct": 68.5,
    "axisLo": 1.08,
    "axisHi": 2.66,
    "pos": 0.7975,
    "clamped": false,
-   "sampleN": 5957,
+   "sampleN": 5958,
    "sampleFrom": "2003-01-02",
    "marks": []
   }
