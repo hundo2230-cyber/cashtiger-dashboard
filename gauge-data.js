@@ -2,7 +2,7 @@
    원천 = synexus/data/macro.db (FRED 수집본). 숫자를 손으로 적으면 조용히 낡는다.
    ⭐바늘 위치(pos)도 여기서 계산한다 — 화면이 위치를 발명하지 못하게. */
 const GAUGE = {
- "asOf": "2026-10-28",
+ "asOf": "2026-10-29",
  "gauges": [
   {
    "key": "spread",
@@ -12,14 +12,14 @@ const GAUGE = {
    "compare": "0 과 비교합니다. 0 아래로 내려가면 '역전' 이라 부릅니다.",
    "source": "FRED T10Y2Y",
    "marksAbsentReason": "",
-   "value": 0.38,
-   "asOf": "2026-10-28",
-   "pct": 33.1,
+   "value": 0.37,
+   "asOf": "2026-10-29",
+   "pct": 32.8,
    "axisLo": -0.89,
    "axisHi": 2.64,
-   "pos": 0.3598,
+   "pos": 0.3569,
    "clamped": false,
-   "sampleN": 12599,
+   "sampleN": 12600,
    "sampleFrom": "1976-06-01",
    "marks": [
     {
@@ -56,14 +56,14 @@ const GAUGE = {
    "compare": "두 선 사이가 '어느 쪽이라 말하기 어려운 구간' 입니다. 음수는 일자리가 빠듯한 쪽, 양수는 남는 쪽입니다.",
    "source": "FRED UNRATE − NROU (의회예산처 추정 · 분기값을 앞채움)",
    "marksAbsentReason": "",
-   "value": -0.29,
-   "asOf": "2026-08-01",
-   "pct": 36.2,
+   "value": -0.19,
+   "asOf": "2026-09-01",
+   "pct": 40.1,
    "axisLo": -2.3,
    "axisHi": 4.56,
-   "pos": 0.293,
+   "pos": 0.3076,
    "clamped": false,
-   "sampleN": 799,
+   "sampleN": 800,
    "sampleFrom": "1960-01-01",
    "marks": [
     {
@@ -130,14 +130,14 @@ const GAUGE = {
    "compare": "자기 과거 기록과 비교합니다. 커질수록 물가를 더 높게 매긴 쪽입니다.",
    "source": "FRED T10YIE",
    "marksAbsentReason": "공표된 2% 물가 목표는 '개인소비지출 물가지수' 기준이고, 이 값은 소비자물가지수에 연동된 채권에서 나옵니다. 기준이 달라 선을 긋지 않았습니다.",
-   "value": 2.38,
-   "asOf": "2026-10-28",
-   "pct": 77.0,
+   "value": 2.35,
+   "asOf": "2026-10-29",
+   "pct": 71.1,
    "axisLo": 1.08,
    "axisHi": 2.66,
-   "pos": 0.8228,
+   "pos": 0.8038,
    "clamped": false,
-   "sampleN": 5960,
+   "sampleN": 5961,
    "sampleFrom": "2003-01-02",
    "marks": []
   }
