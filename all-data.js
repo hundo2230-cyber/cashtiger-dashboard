@@ -5,5 +5,5 @@ const TILES = [
  {"id": "DGS2", "name": "2년 만기 국채", "value": "4.56%", "verdict": "평소 범위", "note": "1년 전보다 1.01%p 올랐다", "band": "calm", "asOf": "2026-11-09", "href": "rates.html"},
  {"id": "DGS10", "name": "10년 만기 국채", "value": "4.88%", "verdict": "평소 범위", "note": "1년 전보다 0.77%p 올랐다", "band": "calm", "asOf": "2026-11-09", "href": "rates.html"},
  {"id": "B9", "name": "물가와 고용", "value": "3.11% / 4.2%", "verdict": "물가만 높음", "note": "물가는 목표 위 · 고용은 평범하다", "band": "b9-hot_neutral", "asOf": "2026-09-01", "href": "b9.html"},
- {"id": "VIXCLS", "name": "변동성 기대", "value": "19.46", "verdict": "평소보다 들썩", "note": "평소의 1.11배", "band": "choppy", "asOf": "2026-11-10", "href": "vix.html"}
+ {"id": "VIXCLS", "name": "변동성 기대", "value": "17.49", "verdict": "평소보다 조용", "note": "평소의 1.00배", "band": "quiet", "asOf": "2026-11-11", "href": "vix.html"}
 ];
