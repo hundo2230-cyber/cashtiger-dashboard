@@ -2,7 +2,7 @@
    원천 = synexus/data/macro.db (FRED 수집본). 숫자를 손으로 적으면 조용히 낡는다.
    ⭐바늘 위치(pos)도 여기서 계산한다 — 화면이 위치를 발명하지 못하게. */
 const GAUGE = {
- "asOf": "2026-11-13",
+ "asOf": "2026-11-16",
  "gauges": [
   {
    "key": "spread",
@@ -12,14 +12,14 @@ const GAUGE = {
    "compare": "0 과 비교합니다. 0 아래로 내려가면 '역전' 이라 부릅니다.",
    "source": "FRED T10Y2Y",
    "marksAbsentReason": "",
-   "value": 0.27,
-   "asOf": "2026-11-13",
-   "pct": 28.7,
+   "value": 0.29,
+   "asOf": "2026-11-16",
+   "pct": 29.6,
    "axisLo": -0.89,
    "axisHi": 2.64,
-   "pos": 0.3286,
+   "pos": 0.3343,
    "clamped": false,
-   "sampleN": 12610,
+   "sampleN": 12611,
    "sampleFrom": "1976-06-01",
    "marks": [
     {
@@ -86,20 +86,20 @@ const GAUGE = {
    "compare": "장기 평균과 비교합니다. 평균보다 높은지 낮은지만 말합니다.",
    "source": "FRED TCU (연준 산업생산·설비가동률)",
    "marksAbsentReason": "",
-   "value": 76.85,
-   "asOf": "2026-09-01",
-   "pct": 25.2,
-   "axisLo": 70.14,
+   "value": 76.36,
+   "asOf": "2026-10-01",
+   "pct": 20.3,
+   "axisLo": 70.16,
    "axisHi": 87.89,
-   "pos": 0.378,
+   "pos": 0.3497,
    "clamped": false,
-   "sampleN": 717,
+   "sampleN": 718,
    "sampleFrom": "1967-01-01",
    "marks": [
     {
      "value": 79.41,
      "label": "79.4 — 1972~2025 평균",
-     "pos": 0.5223
+     "pos": 0.5217
     }
    ]
   },
@@ -130,14 +130,14 @@ const GAUGE = {
    "compare": "자기 과거 기록과 비교합니다. 커질수록 물가를 더 높게 매긴 쪽입니다.",
    "source": "FRED T10YIE",
    "marksAbsentReason": "공표된 2% 물가 목표는 '개인소비지출 물가지수' 기준이고, 이 값은 소비자물가지수에 연동된 채권에서 나옵니다. 기준이 달라 선을 긋지 않았습니다.",
-   "value": 2.24,
-   "asOf": "2026-11-13",
-   "pct": 50.9,
+   "value": 2.2,
+   "asOf": "2026-11-16",
+   "pct": 46.5,
    "axisLo": 1.08,
    "axisHi": 2.66,
-   "pos": 0.7342,
+   "pos": 0.7089,
    "clamped": false,
-   "sampleN": 5971,
+   "sampleN": 5972,
    "sampleFrom": "2003-01-02",
    "marks": []
   }
