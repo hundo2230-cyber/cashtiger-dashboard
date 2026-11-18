@@ -22,7 +22,7 @@ const B9 = {
  "nrouFrom": "1949-01-01",
  "nrouMin": 4.16,
  "nrouMax": 6.24,
- "dupRows": 135,
+ "dupRows": 138,
  "cells": [
   {
    "key": "hot_tight",
